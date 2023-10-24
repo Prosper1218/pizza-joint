@@ -19,7 +19,7 @@ const YourOrder = () => {
                 transition={{ duration: 0.4, type: "spring", stiffness: 250, delay: 0.2 }}
             >
 
-                <p className='steps'>Your Ordered :)</p>
+                <p className='steps'>You Ordered :)</p>
 
                 <p id='li'> You Ordered a "{B}" Pizza with "{T}" Toppings</p>
                 <p style={{ display: "flex", flexDirection: "row", justifyContent: "center" }}>   ---</p>

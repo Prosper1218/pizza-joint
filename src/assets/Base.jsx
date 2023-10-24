@@ -26,7 +26,6 @@ const Base = () => {
         setB(base)
     }
 
-
     return (
         <div>
             {
