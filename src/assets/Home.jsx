@@ -1,14 +1,14 @@
 import React from 'react'
-import logo from "../Images/logo.png";
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
-
+import { useContext } from 'react';
+import { ThemeContext } from '../App';
 
 
 
 
 const Home = () => {
-
+    const { Lightheme } = useContext(ThemeContext)
 
     return (
         <motion.div
@@ -19,7 +19,7 @@ const Home = () => {
         >
 
             <div>
-                <p id='welcome'> Welcome to pizza joint</p>
+                <p id='welcome' style={{ color: Lightheme ? "black" : "white" }}> Welcome to pizza joint</p>
                 <Button />
                 <br />
             </div>
@@ -28,7 +28,11 @@ const Home = () => {
     )
 }
 
+
+
 const Button = () => {
+
+    const { Lightheme } = useContext(ThemeContext)
 
     return <div>
         <br />
@@ -36,7 +40,8 @@ const Button = () => {
 
         <Link to="/Base">
             <motion.button className="btn"
-                whileHover={{ textShadow: "0px 0px 8px rgb(255,255,255)", boxShadow: "0px 0px 8px rgb(255,255,255)", }}
+                style={{ border: Lightheme ? "1px solid black" : "1px solid white", color: Lightheme ? "black" : "white" }}
+                whileHover={{ textShadow: Lightheme ? "0px 0px 8px rgb(0, 0, 0)" : "0px 0px 8px rgb(255,255,255)", boxShadow: Lightheme ? "0px 0px 8px rgb(255,255,255)" : "0px 0px 8px rgb(255,255,255)", }}
             >
                 Create your pizza
             </motion.button>

@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { useState, useContext } from "react";
 import "../App.css";
 import { Link } from 'react-router-dom';
-import { MyPizzaContext } from '../App';
+import { MyPizzaContext, ThemeContext } from '../App';
 
 
 
@@ -74,7 +74,7 @@ const Topping = () => {
 }
 
 const Button = () => {
-
+    const { Lightheme } = useContext(ThemeContext)
     return <motion.div
         initial={{ x: -700, }}
         animate={{ x: 0 }}
@@ -82,7 +82,8 @@ const Button = () => {
     >
         <Link to="/YourOrder">
             <motion.button className="btn" onClick={() => { }}
-                whileHover={{ textShadow: "0px 0px 8px rgb(255,255,255)", boxShadow: "0px 0px 8px rgb(255,255,255)", }}
+                style={{ color: Lightheme ? "black" : "white", borderColor: Lightheme ? "black" : "white" }}
+                whileHover={{ textShadow: Lightheme ? "0px 0px 8px rgb(10, 10, 10)" : "0px 0px 8px rgb(255,255,255)", boxShadow: Lightheme ? "0px 0px 8px rgb(0, 0, 0)" : "0px 0px 8px rgb(255,255,255)", }}
             >Order</motion.button>
         </Link>
     </motion.div>
