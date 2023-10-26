@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from "../Images/logo.png";
-import logo1 from "../Images/Pizza1.png";
+import logosecond from "../Images/secondlogo.png";
 import { motion } from "framer-motion";
 import { Link } from 'react-router-dom';
 import { useContext } from 'react';
@@ -18,7 +18,7 @@ const Nav = () => {
                     transition={{ duration: 0.4, type: "spring", stiffness: 200 }}
                 >
                     <Link to={"/"}>
-                        <img src={Lightheme ? logo1 : logo} alt="brand" id='logo' />
+                        <img src={Lightheme ? logosecond : logo} alt="brand" id='logo' />
                         <p id='name' style={{ color: Lightheme ? " #101010" : "white" }}>Pizza Joint</p>
                     </Link>
 
